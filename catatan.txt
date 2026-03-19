@@ -1,0 +1,65 @@
+Notasi Algoritma Perhitungan Luas
+
+Class : Lingkaran
+
+Deklarasi Atrribute :
+    r : float
+
+Deklarasi Constructor :
+Method Lingkarang(nilai_r)
+    r = nilai_r
+
+Deklarasi Function :
+Method luas()
+    hasil = 3.14 * r * r
+    return hasil
+
+Algoritma Program utamanya: 
+    Deklarasi dari Class
+    float r
+    inisiasi = Lingkaran(r)
+
+    Output "Hasil Luas Lingkaran adalah : " , inisiasi.luas()
+
+    Notasi Algoritma Perhitungan Luas
+
+Class : BangunRuang
+
+Deklarasi Atrribute :
+    r : float
+    p : float
+    l : float
+    s : float
+
+Deklarasi Constructor :
+Method BangunRuang(nilai_r, nilai_p, nilai_l, nilai_s)
+    r = nilai_r
+    p = nilai_p
+    l = nilai_l
+    s = nilai_s
+
+Deklarasi Function :
+Method lingkaran()
+    luas = 3.14 * r * r
+    return luas
+
+Method persegiPanjang()
+    luas = p * l
+    return luas
+
+Method kubus()
+    luas = s * s * s
+    return luas
+
+Algoritma Program utamanya: 
+    Deklarasi dari Class
+    float r,p,l,s 
+    Input r
+    Input p
+    Input l
+    Input s
+    data = BangunRuang(r,p,l,s)
+
+    Output "Hasil Luas Lingkaran adalah : " , data.lingkaran()
+    Output "Hasil Luas Persegi Panjang adalah : " , data.persegiPanjang()
+    Output "Hasil Luas Kubus adalah : " , data.kubus()

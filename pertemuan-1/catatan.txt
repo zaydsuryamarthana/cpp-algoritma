@@ -1,0 +1,12 @@
+Jadi ada upah reguler dimana rumusnya "Upah x Jam Kerja"
+terus ada upah tambahan dihitung dari *jumlah* jam Kerja
+
+Apabila karyawan jam lemburnya lebih dari atau sama dengan 30 jam maka tambahan 40% dari upah
+Apabila karyawan jam lemburnya kurang dari 30 jam maka tambahan 20% dari upah
+
+Overpay digunakan sebagai upah tambahan untuk dijumlahkan dengan upah reguler
+Overpay = (Jam Kerja - Lembur Kerja) * Upah * 30%
+
+Total Upah = upah reguler + Overpay
+
+berarti kan, yang input manual itu jam kerja, upah.
