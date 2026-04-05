@@ -1,0 +1,48 @@
+Algoritma Bubble Sort
+- Membandingkan dua elemen atau pasangan elemen yang berdekatan dan menukarnya jika posisinya tidak benar
+- Pengurutan dibandingkan dari suatu nilai elemen, dimana nilai tersebut berupa integer atau angka.
+
+Penjelasan sederhana
+1. Ada kumpulan data seperti : 1,4,2,6,3,9
+2. Algoritma bubble sort akan melakukan perbandingan antara pasangan elemen pertama terlebih dahulu (1 & 4)
+3. Pengurutan didasarkan dengan perbandingan nilai integer "Apakah 1 lebih besar dari 4?" 
+4. (Tidak), maka proses akan dilanjutkan untuk pasangan selanjutnya yaitu (4 & 2)
+5. (Iya), maka proses penukaran antar elemen terjadi antara 4 & 2, nilai 2 akan memposisikan sebagai nilai 4 dan nilai 4 akan berposisikan nilai 2
+6. Urutan sementara adalah 1,2,4,6,3,9. Maka akan dilanjutkan pengecekan hingga nilai terakhir
+
+Notasi Algoritma Bubble Sort
+    -----------------------------------------------------------
+-   Kamus
+    -----------------------------------------------------------
+    integer n -> sebagai jumlah data;
+    integer *arr -> data array didasarkan jumlah n;
+    integer temp -> sebagai penyimpan data sementara
+
+    // Antara bisa arr diisikan arr[100] baru diperbarui data 
+    // setelah variabel n ada valuenya. Atau ndak pointer aja
+    -----------------------------------------------------------
+-   Algoritma
+    -----------------------------------------------------------
+    Output("Masukkan jumlah data : ");
+    Input(n);
+
+    Pembaruan arr = new int[n];
+
+    For (integer i = 1, Apakah i kurang dari n? maka i++)
+        
+        For (integer j = 0, Apakah j kurang dari i - n? maka j++)
+    
+            If (arr[j] lebih besar dari arr[j+1]?)
+
+                temp = arr[j] -> temp menyimpan dulu elemen pertama 
+                arr[j] = arr[j+1] -> elemen pertama diperbarui dengan elemen yang baru
+                arr[j+1] = temp -> elemen kedua akan diperbarui dengan data sementara dari elemen pertama
+
+            Endif
+
+        Endfor
+
+    Endfor
+
+    
+    

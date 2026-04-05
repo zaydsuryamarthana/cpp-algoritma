@@ -22,25 +22,25 @@ void pertemuan1() {
 
     switch (pilihan) {
     case 1:
-      kasus1();
+      kasus1P1();
       break;
     case 2:
-      kasus2();
+      kasus2P1();
       break;
     case 3:
-      kasus3();
+      kasus3P1();
       break;
     case 4:
-      kasus4();
+      kasus4P1();
       break;
     case 5:
-      kasus5();
+      kasus5P1();
       break;
     case 6:
-      kasus6();
+      kasus6P1();
       break;
     case 7:
-      kasus7();
+      kasus7P1();
       break;
     }
   } while (pilihan != 0);

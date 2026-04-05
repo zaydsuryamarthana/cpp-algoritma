@@ -7,18 +7,18 @@
 
 using namespace std;
 
-double kasus1Soal1(double a) { return a * a * a + 7; }
-double kasus1Soal2(double a, double b, double c, double x) {
+double kasus1Soal1P1(double a) { return a * a * a + 7; }
+double kasus1Soal2P1(double a, double b, double c, double x) {
   return pow((a * x), 2) + (b * x) + c;
 }
 
 typedef struct {
   double sum;
   double average;
-} kasus1Soal3;
+} kasus1Soal3P1;
 
-kasus1Soal3 outputSoal3(double a, double b, double c, double d, double e) {
-  kasus1Soal3 data;
+kasus1Soal3P1 outputSoal3(double a, double b, double c, double d, double e) {
+  kasus1Soal3P1 data;
   data.sum = a + b + c + d + e;
   data.average = data.sum / 5;
 
@@ -30,10 +30,10 @@ typedef struct {
   double reamur;
   double farenheit;
   double kelvin;
-} kasus1Soal4;
+} kasus1Soal4P1;
 
-kasus1Soal4 outputSoal4(double data) {
-  kasus1Soal4 konversi;
+kasus1Soal4P1 outputSoal4(double data) {
+  kasus1Soal4P1 konversi;
   konversi.reamur = (4.0 / 5.0) * data;
   konversi.farenheit = (9.0 / 5.0) * data + 32;
   konversi.kelvin = data + 273;
@@ -45,10 +45,10 @@ typedef struct {
   int upahReguler;
   double overpay;
   int totalUpah;
-} kasus2Soal1;
+} kasus2Soal1P1;
 
-kasus2Soal1 outputSoa1(int jamKerja, int upah) {
-  kasus2Soal1 data;
+kasus2Soal1P1 outputSoa1(int jamKerja, int upah) {
+  kasus2Soal1P1 data;
   data.upahReguler = upah * jamKerja;
 
   if (jamKerja >= 30) {
@@ -64,7 +64,7 @@ kasus2Soal1 outputSoa1(int jamKerja, int upah) {
   return data;
 }
 
-void kasus3Soal1(int a, int b) {
+void kasus3Soal1P1(int a, int b) {
   cout << "Hasil Perulangan\t: ";
 
   if (a > b) {
@@ -156,7 +156,7 @@ public:
   }
 };
 
-void kasus1() {
+void kasus1P1() {
   int soal;
   do {
     cout << "\nSoal-Soal Review Variable dan Assignment" << endl;
@@ -177,7 +177,7 @@ void kasus1() {
       cout << "-------------------------------------" << endl;
       cout << "a : " << "2" << endl;
       cout << "\nJawabannya adalah : ";
-      cout << kasus1Soal1(2) << endl;
+      cout << kasus1Soal1P1(2) << endl;
       break;
     case 2:
       cout << "-------------------------------------" << endl;
@@ -188,11 +188,11 @@ void kasus1() {
       cout << "c : " << "1" << endl;
       cout << "x : " << "4" << endl;
       cout << "\nJawabannya adalah : ";
-      cout << kasus1Soal2(2, 3, 1, 4) << endl;
+      cout << kasus1Soal2P1(2, 3, 1, 4) << endl;
       break;
     case 3: {
 
-      kasus1Soal3 hasil = outputSoal3(2, 3, 7, 9, 12);
+      kasus1Soal3P1 hasil = outputSoal3(2, 3, 7, 9, 12);
       cout << "-----------------------------------------" << endl;
       cout << "Soal 3 : Program Menghitung SUM & AVERAGE" << endl;
       cout << "-----------------------------------------" << endl;
@@ -201,7 +201,7 @@ void kasus1() {
       break;
     }
     case 4: {
-      kasus1Soal4 hasil = outputSoal4(39);
+      kasus1Soal4P1 hasil = outputSoal4(39);
       cout << "------------------------------" << endl;
       cout << "Soal 4 : Konversi Suhu Celcius" << endl;
       cout << "------------------------------" << endl;
@@ -215,7 +215,7 @@ void kasus1() {
   } while (soal != 0);
 }
 
-void kasus2() {
+void kasus2P1() {
   int upah, jamKerja;
   string nama, tempat;
   cout << "\nProgram Upah Lembur Karyawan" << endl;
@@ -230,7 +230,7 @@ void kasus2() {
 
   cout << '\n';
 
-  kasus2Soal1 hasil = outputSoa1(jamKerja, upah);
+  kasus2Soal1P1 hasil = outputSoa1(jamKerja, upah);
 
   cout << "---------------------------------------------" << endl;
   cout << "Nama Lengkap\t: " << nama << endl;
@@ -241,7 +241,7 @@ void kasus2() {
   cout << "Total Upah\t : " << "Rp. " << hasil.totalUpah << endl;
 }
 
-void kasus3() {
+void kasus3P1() {
   int a, b;
   cout << "\nProgram Perulangan Angka" << endl;
   cout << "------------------------" << endl;
@@ -250,12 +250,12 @@ void kasus3() {
   cout << "Masukkan nilai B\t: ";
   cin >> b;
 
-  kasus3Soal1(a, b);
+  kasus3Soal1P1(a, b);
 
   cout << '\n';
 }
 
-void kasus4() {
+void kasus4P1() {
   ArrayData fungsi;
   int n;
   cout << "\nProgram Array MAX, MIN, SUM, AVERAGE" << endl;
@@ -272,7 +272,7 @@ void kasus4() {
   cout << "Nilai terbesar adalah\t: " << fungsi.getMax() << endl;
 }
 
-void kasus5() {
+void kasus5P1() {
   adtStructure nilai;
   cout << "\nProgram ADT Structure" << endl;
   cout << "---------------------" << endl;
@@ -284,7 +284,7 @@ void kasus5() {
   cout << "Nilai dari Structure Y : " << nilai.y << endl;
 }
 
-void kasus6() {
+void kasus6P1() {
   int nilai;
   FungsiProsedur data;
   cout << "\nProgram Fungsi dan/atau Prosedur" << endl;
@@ -300,7 +300,7 @@ void kasus6() {
        << data.averageData(nilai, data.sumArray(nilai)) << endl;
 }
 
-void kasus7() {
+void kasus7P1() {
   int i = 15, *p, *q;
   // "i" sebagai deklarasi awal variabel dengan nilai 15 dibantu dengan dua
   // pointer yaitu p dan q Pointer guna menunjukkan alamat memori dari deklarasi

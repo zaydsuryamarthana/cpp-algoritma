@@ -2,12 +2,12 @@
 #define PERTEMUAN_1_H
 
 void pertemuan1();
-void kasus1();
-void kasus2();
-void kasus3();
-void kasus4();
-void kasus5();
-void kasus6();
-void kasus7();
+void kasus1P1();
+void kasus2P1();
+void kasus3P1();
+void kasus4P1();
+void kasus5P1();
+void kasus6P1();
+void kasus7P1();
 
 #endif
