@@ -1,140 +1,171 @@
 #include "header.h"
-#include <ios>
 #include <iostream>
-#include <limits>
-#include <string>
 
 using namespace std;
 
-struct dataMahasiswa {
-  int umur;
-  string nama;
-};
+void SortBase::setSize(int max) {
+  n = max;
+  arr = new int[n];
+}
 
-class bubbleMahasiswa {
-private:
-  int n;
-  dataMahasiswa *data;
-
-public:
-  void input() {
-    cout << "\nMasukkan jumlah data mahasiswa : ";
-    cin >> n;
-    data = new dataMahasiswa[n];
+void SortBase::setArray(int index, int value) {
+  if (index >= 0 && index < n) {
+    arr[index] = value;
   }
+}
+int SortBase::getSize() { return n; }
+int SortBase::getArray(int index) { return arr[index]; }
+int *SortBase::allData() { return arr; }
 
-  void proses() {
-    cout << "\nLengkapi identitas mahasiswa" << endl;
-    cout << "----------------------------" << endl;
-    for (int i = 0; i < n; i++) {
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');
-      cout << "Identitas Mahasiswa ke - " << i + 1 << endl;
-      cout << "Nama Lengkap\t: ";
-      getline(cin, data[i].nama);
-      cout << "Umur\t\t: ";
-      cin >> data[i].umur;
-    }
+void printArray(SortBase &data) {
+  int *arr = data.allData();
+  int n = data.getSize();
+
+  for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
   }
+}
 
-  void algoritma(bool algoritma) {
-    int temp;
-    char sort;
-    cout << "\nMemproses data meggunakan Algoritma Bubble Sort" << endl;
-    cout << "---------------------" << endl;
-    cout << "Masukkan pengurutan data berdasarkan (nama 'n' / umur 'u') : ";
-    cin >> sort;
-    for (int i = 1; i < n; i++) {
-      for (int j = 0; j < n - i; j++) {
-        bool condition = false;
-
-        if (sort == 'n' || sort == 'N') {
-          condition = algoritma ? (data[j].nama > data[j + 1].nama)
-                                : (data[j].nama < data[j + 1].nama);
-        } else if (sort == 'u' || sort == 'U') {
-          condition = algoritma ? (data[j].umur > data[j + 1].umur)
-                                : (data[j].umur < data[j + 1].umur);
-        } else {
-          cout << "Tidak ada " << endl;
+void bubbleSort(int *arr, int n) {
+  int tahap = 1;
+  cout << "\n----------------------------" << endl;
+  cout << "PROSES ALGORITMA BUBBLE SORT" << endl;
+  cout << "----------------------------" << endl;
+  cout << "Awal\t\t: ";
+  for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
+  }
+  cout << endl;
+  for (int i = 1; i < n; i++) {
+    for (int j = 0; j < n - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        cout << "Tahapan - " << tahap++ << "\t: ";
+        for (int k = 0; k < n; k++) {
+          cout << arr[k] << " ";
         }
-        if (condition) {
-          dataMahasiswa temp = data[j];
-          data[j] = data[j + 1];
-          data[j + 1] = temp;
-        }
+        cout << endl;
       }
     }
   }
+  cout << "----------------------------";
+}
 
-  void output() {
-    cout << "\nData Mahasiswa UDINUS 2026" << endl;
-    cout << "------------------------------" << endl;
-    for (int i = 0; i < n; i++) {
-      cout << "Nama lengkap\t: " << data[i].nama << endl;
-      cout << "Umur\t\t: " << data[i].umur << endl;
-      cout << "------------------------------" << endl;
-    }
+void selectionSort(int *arr, int n) {
+  int tahap = 1;
+  cout << "\n-----------------------------" << endl;
+  cout << "PROSES ALGORITMA SELECTION SORT" << endl;
+  cout << "-----------------------------" << endl;
+  cout << "Awal\t\t: ";
+  for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
   }
-};
 
-class bubbleSort {
-private:
-  int n;
-  int *arr;
-
-public:
-  void input() {
-    cout << "Nilai panjang array : ";
-    cin >> n;
-    arr = new int[n];
-  }
-  void proses() {
-    cout << "\nMasukkan nilai setiap index array" << endl;
-    for (int i = 0; i < n; i++) {
-      cout << "Nilai ke - " << i + 1 << " : ";
-      cin >> arr[i];
-    }
-  }
-  void algoritma(bool algoritma) {
-    int temp;
-    cout << "Memproses Data Algoritma Bubble Sort" << endl;
-    for (int i = 1; i < n; i++) {
-      for (int j = 0; j < n - i; j++) {
-        bool condition =
-            algoritma ? (arr[j] > arr[j + 1]) : (arr[j] < arr[j + 1]);
-
-        if (condition) {
-          temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
-        }
+  int key, temp;
+  for (int i = 0; i < n - 1; i++) {
+    key = i;
+    for (int j = i + 1; j < n; j++) {
+      if (arr[j] < arr[key]) {
+        key = j;
       }
     }
+    temp = arr[key];
+    arr[key] = arr[i];
+    arr[i] = temp;
   }
-  void cetak() {
-    cout << "Data Array : ";
-    for (int i = 0; i < n; i++) {
-      cout << arr[i] << " ";
+}
+void insertionSort(int *arr, int n) {
+  int tahap = 1;
+  cout << "\n-----------------------------" << endl;
+  cout << "PROSES ALGORITMA INSERTION SORT" << endl;
+  cout << "-----------------------------" << endl;
+  cout << "Awal\t\t: ";
+  for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
+  }
+
+  int key, temp;
+  for (int i = 1; i < n; i++) {
+    key = arr[i];
+    int j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j = j - 1;
     }
-    cout << '\n';
+    arr[j + 1] = key;
   }
-};
+}
 
 void kasus1P3() {
-  bubbleSort data;
-  cout << "Program Algoritma Bubble Sort Ascending" << endl;
-  data.input();
-  data.proses();
-  data.cetak();
-  data.algoritma(false);
-  data.cetak();
+  SortBase data;
+  int n;
+  cout << "Masukkan jumlah data yang diinginkan : ";
+  cin >> n;
+
+  data.setSize(n);
+
+  for (int i = 0; i < n; i++) {
+    int value;
+    cout << "Data ke - " << i + 1 << "\t\t: ";
+    cin >> value;
+    data.setArray(i, value);
+  }
+
+  cout << "\nData yang disimpan\t: ";
+  printArray(data);
+
+  bubbleSort(data.allData(), n);
+
+  cout << "\nData setelah diolah\t: ";
+  printArray(data);
 }
 
 void kasus2P3() {
-  bubbleMahasiswa identitas;
-  cout << "\nProgram Algoritma Bubble Sort Mahasiswa" << endl;
-  cout << "---------------------------------------" << endl;
-  identitas.input();
-  identitas.proses();
-  identitas.algoritma(true);
-  identitas.output();
+  SortBase data;
+  int n;
+  cout << "Masukkan jumlah data yang diinginkan : ";
+  cin >> n;
+
+  data.setSize(n);
+
+  for (int i = 0; i < n; i++) {
+    int value;
+    cout << "Data ke - " << i + 1 << "\t\t: ";
+    cin >> value;
+    data.setArray(i, value);
+  }
+
+  cout << "\nData yang disimpan\t: ";
+  printArray(data);
+
+  selectionSort(data.allData(), n);
+
+  cout << "\nData setelah diolah\t: ";
+  printArray(data);
+}
+
+void kasus3P3() {
+  SortBase data;
+  int n;
+  cout << "Masukkan jumlah data yang diinginkan : ";
+  cin >> n;
+
+  data.setSize(n);
+
+  for (int i = 0; i < n; i++) {
+    int value;
+    cout << "Data ke - " << i + 1 << "\t\t: ";
+    cin >> value;
+    data.setArray(i, value);
+  }
+
+  cout << "\nData yang disimpan\t: ";
+  printArray(data);
+
+  insertionSort(data.allData(), n);
+
+  cout << "\nData setelah diolah\t: ";
+  printArray(data);
 }

@@ -1,0 +1,51 @@
+Class & Object 
+- Class sendiri adalah suatu kerangka dasar atau cetak blueprint untuk menciptakan suatu instance(contoh/kasus) dari objek.
+- Objek merupakan kumpulan atribute dan method yang sama dari class itu sendiri anggaplah aja kek hasil cetak dari class.
+  Di dalam class bisa disebut juga dengan "Anggota Class" seperti ;
+  -> Atrribute / Data member, yakni data atau ciri-ciri yang dimiliki suatu object
+  -> Data function, yakni fungsi (perilaku atau aksi) yang bisa dilakukan oleh object
+
+Modifier Class (Hak Akses)
+Kata kunci untuk mengatur segala sesuatu hak akses dan visibilitas anggota Classnya
+- Private   : Anggota hanya bisa diakses oleh fungsi di dalam class yang sama 
+- Public    : Anggota dapat diakses dari luar class (bebas)
+- Protected : Anggota hanya diakses oleh class itu sendiri dan class turunannya
+
+Yang private ma protected 11 / 12 sih cuman yang membedakan protected bisa digunakan di dalam class turununannya anggaplah penghubung atau pewarisan
+
+Notasi Class & Object
+    -----------------------------------------------------------
+-   class -> Mahasiswa
+    -----------------------------------------------------------
+    private :
+    string kode_kampus -> salah satu attribute / data member  
+
+    public  :
+    string nama;
+    int umur;
+    
+    void cetak(){
+        kode_kampus = "UDINUS751024"
+        Output("Nama Lengkap : " >> nama)
+        Output("Umur : " >> umur)
+        Output("Nama Lengkap : " >> kode_kampus)
+    } -> data method atau data fungsi
+
+    -----------------------------------------------------------
+-   object -> main.cpp
+    -----------------------------------------------------------
+    int main(){
+
+        Mahasiswa data;
+        // Mahasiswa adalah class yang dibangun
+        // data itu sendiri adalah deklarasi atau inisiasi suatu object
+
+        // Sekarang memberikan nilai pada atribute / data member
+        data.nama = "Zayd Surya Marthana" -> Mengakses attribute
+        data.umur = 1 
+
+        // Memanggil suatu method di dalam class
+        data.cetek();
+
+        return 0;
+    }

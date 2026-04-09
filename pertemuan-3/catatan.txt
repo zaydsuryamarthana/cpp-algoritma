@@ -14,23 +14,20 @@ Notasi Algoritma Bubble Sort
     -----------------------------------------------------------
 -   Kamus
     -----------------------------------------------------------
-    integer n -> sebagai jumlah data;
-    integer *arr -> data array didasarkan jumlah n;
+    integer n = 7 -> sebagai jumlah data;
+    integer x[n] = {6, 8, 7, 4, 2, 5, 3} data array didasarkan jumlah n;
     integer temp -> sebagai penyimpan data sementara
+    integer i, j -> sebagai iterasi loop nantinya
 
     // Antara bisa arr diisikan arr[100] baru diperbarui data 
     // setelah variabel n ada valuenya. Atau ndak pointer aja
     -----------------------------------------------------------
 -   Algoritma
     -----------------------------------------------------------
-    Output("Masukkan jumlah data : ");
-    Input(n);
 
-    Pembaruan arr = new int[n];
-
-    For (integer i = 1, Apakah i kurang dari n? maka i++)
+    For (i = 1, Apakah i kurang dari n? maka i++)
         
-        For (integer j = 0, Apakah j kurang dari i - n? maka j++)
+        For (j = 0, Apakah j kurang dari i - n? maka j++)
     
             If (arr[j] lebih besar dari arr[j+1]?)
 
@@ -45,4 +42,77 @@ Notasi Algoritma Bubble Sort
     Endfor
 
     
+Algoritma Selection Sort
+- 
+
+Notasi Algoritma Selection Sort
+    -----------------------------------------------------------
+-   Kamus
+    -----------------------------------------------------------
+    integer n = 7 -> sebagai jumlah data;
+    integer x[n] = {6, 8, 7, 4, 2, 5, 3} -> data array didasarkan jumlah n;
+    integer temp -> sebagai penyimpan data sementara
+    integer key -> tempat penyimpanan data terkecil di dalam array
+    integer i, j -> sebagai iterasi loop nantinya
+
+    // Antara bisa arr diisikan arr[100] baru diperbarui data 
+    // setelah variabel n ada valuenya. Atau ndak pointer aja
+    -----------------------------------------------------------
+-   Algoritma
+    -----------------------------------------------------------
+
+    For (i = 0, Apakah i kurang dari n - 1? maka i++)
+
+        key = i; // Key
+        
+        For (j = i + 1, Apakah j kurang dari n? maka j++)
     
+            If (x[key] lebih besar dari x[j]?)
+
+                key = j;
+
+            Endif
+
+            temp = x[key] -> temp menyimpan dulu elemen pertama 
+            x[key] = x[i] -> elemen pertama diperbarui dengan elemen yang baru
+            x[i] = temp -> elemen kedua akan diperbarui dengan data sementara dari elemen pertama
+
+        Endfor
+
+    Endfor
+
+
+Algoritma Insertion Sort
+-
+
+Notasi Algoritma Selection Sort
+    -----------------------------------------------------------
+-   Kamus
+    -----------------------------------------------------------
+    integer n = 7 -> sebagai jumlah data;
+    integer x[n] = {6, 8, 7, 4, 2, 5, 3} -> data array didasarkan jumlah n;
+    integer temp -> sebagai penyimpan data sementara
+    integer key -> sebagai kunci utama untuk data di dalam array
+    integer i, j -> sebagai iterasi loop nantinya
+
+    // Antara bisa arr diisikan arr[100] baru diperbarui data 
+    // setelah variabel n ada valuenya. Atau ndak pointer aja
+    -----------------------------------------------------------
+-   Algoritma
+    -----------------------------------------------------------
+
+    For (i = 1, Apakah i kurang dari n? maka i++)
+
+        key = x[i];
+        j = i - 1;
+        
+        While (Apakah j Lebih besar sama dengan 0 dan x[j] lebih besar dari key?)
+    
+            x[i+1] = x[j] -> elemen kedua akan diperbarui dengan data sementara dari elemen pertama
+            j = j - 1
+
+        Endwhile
+
+        x[i+1] = key -> elemen kedua akan diperbarui dengan data sementara dari elemen pertama
+
+    Endfor
