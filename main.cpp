@@ -2,6 +2,7 @@
 #include "pertemuan-1/header.h"
 #include "pertemuan-2/header.h"
 #include "pertemuan-3/header.h"
+#include "pertemuan-4/header.h"
 #include <iostream>
 using namespace std;
 
@@ -27,6 +28,9 @@ int main() {
       break;
     case 3:
       pertemuan3();
+      break;
+    case 4:
+      pertemuan4();
       break;
     }
   } while (pilihan != 0);
