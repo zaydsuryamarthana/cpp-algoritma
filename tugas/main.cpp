@@ -132,7 +132,7 @@ int main() {
         cin >> listData;
         switch (listData) {
         case 1:
-          inputFront(head);
+          inputFront(head); 
           outputNode(head);
           break;
         case 2:
